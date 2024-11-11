@@ -1,3 +1,5 @@
+from builtins import super
+
 from django.db import models
 from django.conf import settings
 
@@ -16,7 +18,7 @@ class Size(models.Model):
 
 class product(models.Model):
     pr_name=models.CharField(max_length=46,default='')
-    seller = models.ForeignKey(settings.AUTH_USER_MODEL, null=True, default=1,
+    supereller = models.ForeignKey(settings.AUTH_USER_MODEL, null=True, default=1,
                                on_delete=models.SET_NULL)
     price = models.IntegerField(default=0)
     image=models.FileField(upload_to='product/',default='')
